@@ -13,6 +13,6 @@ app.use((err, req, res, next) => {
   res.json({ name: err.name, msg: err.message });
 });
 
-app.listen(5000, () => {
-  console.log(`Server listening on port ${config.port}...`);
-});
+app.listen(config.port || 5000, () =>
+  console.log(`Server listening on port ${config.port}...`)
+);
